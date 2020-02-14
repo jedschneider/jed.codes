@@ -1,0 +1,47 @@
+baseURL = "http://jed.codes/"
+languageCode = "en-us"
+title = "jed.codes"
+theme = "hugo-ink"
+paginate = 5
+
+copyright = "© 2020"
+
+googleAnalytics = "UA-158554300-1"
+
+[params]
+subtitle = "Let me fix that problem for you."
+
+# Optional 64x64 avatar image.
+avatar = "http://gravatar.com/avatar/e90b0742a0a78f583355470561d63197"
+
+# Content types to disable Disqus on.
+disableDisqusTypes = ["page", "post"]
+
+# mailchimp
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 2
+
+[[menu.main]]
+name = "Contact"
+url = "/contact"
+weight = 3
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/jedschneider"
+
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
+
+[taxonomies]
+   tag = "tags"
