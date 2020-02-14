@@ -1,4 +1,4 @@
-baseURL = "http://jed.codes/"
+baseURL = "https://jed.codes/"
 languageCode = "en-us"
 title = "jed.codes"
 theme = "hugo-ink"
