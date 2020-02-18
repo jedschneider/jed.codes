@@ -10,6 +10,7 @@ googleAnalytics = "UA-158554300-1"
 
 [params]
 subtitle = "Let me fix that problem for you."
+favicon = "git-merge.ico"
 
 # Optional 64x64 avatar image.
 avatar = "https://gravatar.com/avatar/e90b0742a0a78f583355470561d63197"
