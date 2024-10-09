@@ -34,6 +34,11 @@ name = "Contact"
 url = "/contact"
 weight = 3
 
+[[menu.main]]
+name = "Services"
+url = "/services"
+weight = 4
+
 
 featherIconsCDN = true
 
