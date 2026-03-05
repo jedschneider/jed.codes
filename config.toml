@@ -2,7 +2,8 @@ baseURL = "https://jed.codes/"
 languageCode = "en-us"
 title = "jed.codes"
 theme = "hugo-ink"
-paginate = 5
+[pagination]
+pagerSize = 5
 
 copyright = "© 2020"
 
