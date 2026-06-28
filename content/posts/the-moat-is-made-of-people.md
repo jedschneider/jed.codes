@@ -1,6 +1,6 @@
 ---
 title: "The Moat Is Made of People"
-date: 2026-06-28T12:12:19-07:00
+date: 2026-06-25T12:12:19-07:00
 draft: false
 tags: ["ai", "testdouble"]
 description: "domain expertise and team perspective as the durable advantage in AI products"

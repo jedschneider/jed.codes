@@ -3,6 +3,7 @@ title: "Start With the Spreadsheet"
 date: 2026-03-04T21:09:58-08:00
 draft: false
 tags: ["ai"]
+description: "AI is too eager to ship interfaces. start with the spreadsheet, reframe before scaling"
 ---
 
 ## Speedrunning your career
