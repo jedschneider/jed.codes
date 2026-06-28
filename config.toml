@@ -55,3 +55,6 @@ url = "/index.xml"
 
 [taxonomies]
    tag = "tags"
+
+[security]
+allowContent = ['text/html', 'text/markdown', 'text/asciidoc', 'text/x-org']
