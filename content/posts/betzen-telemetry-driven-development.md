@@ -4,6 +4,7 @@ date: 2026-07-01T21:41:52-07:00
 draft: false
 description: "TDD models system behavior in the lab; telemetry is the field science that proves or disproves the model. Prompted by Noah Betzen's ElixirConf talk."
 images: ["/images/telemetry-driven-development.png"]
+tags: ['telemetry', 'tdd', 'observability', 'elixir']
 ---
 
 ![Split illustration: on the left, an engineer in a lab coat working at a workbench with red/green/refactor monitors labeled "MODEL: TDD — Predefined Behavior"; on the right, a field-scientist figure walking through a landscape of telemetry span waterfalls and flame graphs, alongside a placard reading "The purpose of a system is what it does — Stafford Beer" and "FIELD SCIENCE: TeDD — Actual Behavior".](/images/telemetry-driven-development.png)
