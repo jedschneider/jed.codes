@@ -1,7 +1,7 @@
 ---
 title: "TDD is the lab, telemetry is the field"
 date: 2026-07-01T21:41:52-07:00
-draft: true
+draft: false
 ---
 
 Noah Betzen's ["Telemetry Driven Development"](https://www.youtube.com/watch?v=irQicdafnyM) talk from ElixirConf gave me a reason to write down a conviction I've been carrying for a while: for most of us, Test Driven Development (TDD) is a substitute for understanding how the system behaves. A more honest description is that it *models* how the system behaves against a set of predefined behaviors and expectations. TDD is a model of behavior — not the behavior of the system at large. Telemetry, then, is the field science that either proves or disproves the model we described in the lab.
