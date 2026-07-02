@@ -2,9 +2,15 @@
 title: "TDD is the lab, telemetry is the field"
 date: 2026-07-01T21:41:52-07:00
 draft: false
+description: "TDD models system behavior in the lab; telemetry is the field science that proves or disproves the model. Prompted by Noah Betzen's ElixirConf talk."
+images: ["/images/telemetry-driven-development.png"]
 ---
 
-Noah Betzen's ["Telemetry Driven Development"](https://www.youtube.com/watch?v=irQicdafnyM) talk from ElixirConf gave me a reason to write down a conviction I've been carrying for a while: for most of us, Test Driven Development (TDD) is a substitute for understanding how the system behaves. A more honest description is that it *models* how the system behaves against a set of predefined behaviors and expectations. TDD is a model of behavior — not the behavior of the system at large. Telemetry, then, is the field science that either proves or disproves the model we described in the lab.
+![Split illustration: on the left, an engineer in a lab coat working at a workbench with red/green/refactor monitors labeled "MODEL: TDD — Predefined Behavior"; on the right, a field-scientist figure walking through a landscape of telemetry span waterfalls and flame graphs, alongside a placard reading "The purpose of a system is what it does — Stafford Beer" and "FIELD SCIENCE: TeDD — Actual Behavior".](/images/telemetry-driven-development.png)
+
+Noah Betzen's ["Telemetry Driven Development"](https://www.youtube.com/watch?v=irQicdafnyM) talk from ElixirConf gave me a reason to write down a conviction I've been carrying for a while: for most of us, Test Driven Development (TDD) is a substitute for understanding how the system behaves. A more honest description is that it *models* how the system behaves against a set of predefined behaviors and expectations. **TDD is a model of behavior — not the behavior of the system at large.** 
+
+Telemetry, then, is **the field science that either proves or disproves the model** we described in the lab.
 
 Noah opens on [Stafford Beer's axiom](https://en.wikipedia.org/wiki/The_purpose_of_a_system_is_what_it_does):
 
