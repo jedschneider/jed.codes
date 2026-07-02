@@ -40,6 +40,16 @@ name = "Services"
 url = "/services"
 weight = 4
 
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = 5
+
+[[menu.main]]
+name = "Search"
+url = "/search/"
+weight = 6
+
 
 featherIconsCDN = true
 
