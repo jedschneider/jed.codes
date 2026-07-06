@@ -1,0 +1,90 @@
+/* Restore a dark background box on highlighted code blocks.
+   The theme's main.css forces `.highlight pre { background-color: transparent !important }`,
+   which strips chroma's inline dark background and leaves monokai's near-white text
+   sitting on the light page (invisible for plain-text/ASCII blocks with no colored tokens).
+   Same specificity + !important + later source order overrides it. */
+.highlight pre {
+    background-color: #272822 !important;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+/* Opt-in table of contents (front matter `toc: true`). */
+.toc {
+    margin: 1.5rem 0 2rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+.toc > summary {
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    opacity: 0.75;
+}
+.toc nav#TableOfContents ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.1rem;
+}
+.toc nav#TableOfContents > ul {
+    padding-left: 0;
+    list-style: none;
+}
+.toc nav#TableOfContents li {
+    margin: 0.15rem 0;
+}
+
+/* Callout accent palette. A constrained, semantic set tuned to sit beside the
+   theme accent (#3700ff). Each is dark enough for AA label contrast on white;
+   panel tint + border are derived from the accent via color-mix. */
+:root {
+    --callout-note: #3700ff;    /* default — theme indigo */
+    --callout-tip: #127a3e;     /* green  — advice, shortcuts */
+    --callout-warning: #9a5b00; /* amber  — caution, footguns */
+    --callout-security: #b3261e;/* red    — security / danger */
+}
+
+/* Aside callouts — raw <aside> blocks in post content.
+   Distinct from blockquotes (serif italic, bare left bar): a tinted panel with
+   an eyebrow label, echoing the .toc idiom above. The variant color is chosen
+   by data-label (case-insensitive); unrecognized labels keep the note accent. */
+.post aside {
+    --callout: var(--callout-note);
+    margin: 1.75rem 0;
+    padding: 0.9rem 1.25rem 0.95rem;
+    border: 1px solid color-mix(in srgb, var(--callout) 22%, transparent);
+    border-left: 3px solid var(--callout);
+    border-radius: 6px;
+    background-color: color-mix(in srgb, var(--callout) 5%, transparent);
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #333;
+}
+.post aside[data-label="Tip" i]      { --callout: var(--callout-tip); }
+.post aside[data-label="Warning" i]  { --callout: var(--callout-warning); }
+.post aside[data-label="Security" i] { --callout: var(--callout-security); }
+.post aside::before {
+    content: "Aside";
+    display: block;
+    /* Override per-aside with <aside data-label="Gotcha">; falls back to "Aside". */
+    margin-bottom: 0.35rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: var(--callout);
+    opacity: 0.85;
+}
+.post aside[data-label]::before {
+    content: attr(data-label);
+}
+.post aside p {
+    margin: 0;
+}
+.post aside p + p {
+    margin-top: 0.6rem;
+}

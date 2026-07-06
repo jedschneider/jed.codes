@@ -20,6 +20,13 @@
 				</div>
 			</div>
 
+			{{ if and .Params.toc .TableOfContents }}
+				<details class="toc" open>
+					<summary>Contents</summary>
+					{{ .TableOfContents }}
+				</details>
+			{{ end }}
+
 			<div class="markdown">
 				{{ .Content }}
 			</div>
