@@ -9,6 +9,14 @@
     overflow-x: auto;
 }
 
+/* Preserve image aspect ratio. The render hook emits explicit width/height
+   (prevents layout shift), but the theme's `img { max-width: 100% }` has no
+   `height: auto`, so scaled-down images keep their attribute height and stretch
+   vertically. Restoring height:auto lets height track the scaled width. */
+img {
+    height: auto;
+}
+
 /* Opt-in table of contents (front matter `toc: true`). */
 .toc {
     margin: 1.5rem 0 2rem;

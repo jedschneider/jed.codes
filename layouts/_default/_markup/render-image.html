@@ -1,0 +1,20 @@
+{{- /* Build-time image pipeline: resize + WebP-compress local images.
+       Sources live full-size in assets/; shipped derivatives are downscaled
+       to a max width and re-encoded as WebP. Remote and unresolved images
+       pass through untouched. */ -}}
+{{- $dest := .Destination -}}
+{{- $alt := .PlainText -}}
+{{- $title := .Title -}}
+{{- $maxWidth := 1600 -}}
+{{- if or (hasPrefix $dest "http") (hasPrefix $dest "//") (hasPrefix $dest "data:") -}}
+  <img src="{{ $dest }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- else -}}
+  {{- $img := resources.Get (strings.TrimPrefix "/" $dest) -}}
+  {{- if $img -}}
+    {{- $w := cond (gt $img.Width $maxWidth) $maxWidth $img.Width -}}
+    {{- $img = $img.Resize (printf "%dx webp q80" $w) -}}
+    <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} width="{{ $img.Width }}" height="{{ $img.Height }}" loading="lazy" decoding="async">
+  {{- else -}}
+    <img src="{{ $dest }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+  {{- end -}}
+{{- end -}}

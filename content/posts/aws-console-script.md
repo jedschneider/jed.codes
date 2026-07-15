@@ -6,7 +6,10 @@ slug: "aws-console-federation-endpoint"
 description: "Use AWS's federation endpoint to trade SSO credentials for a browser sign-in URL and jump straight into the console"
 tags: [aws, infrastructure]
 toc: true
+images: ["/images/aws-console-federation-endpoint.png"]
 ---
+
+![A steampunk wizard at a brass keyboard in a candlelit study. One screen is a terminal reading "$ bin/console lambda" over a glowing blue portal; a floating crystalline frame beside it shows an ornate key sliding into a padlock with the caption "Authenticated: Federation Token Accepted", topped by a storm cloud shooting lightning. A clockwork owl and potion bottles sit on the desk.](/images/aws-console-federation-endpoint.png)
 
 I recently shared how I [set up AWS SSO to manage session access]({{< ref "setting-up-sso-for-your-personal-aws-account" >}}) for development. SSO gives me short-lived credentials on the command line, but there's still a gap: when I want to poke at something in the *web* console, I'm back to hunting through the AWS sign-in page and picking the right account and role by hand.
 
