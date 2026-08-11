@@ -96,3 +96,125 @@ img {
 .post aside p + p {
     margin-top: 0.6rem;
 }
+
+/* Small centered figure — for images that shouldn't dominate the column
+   (the in/out tanager pair). ~1/3 of the full content width. */
+.figure-sm {
+    margin: 1.5rem auto;
+}
+.figure-sm img {
+    display: block;
+    width: 100%;
+    max-width: 270px;
+    margin: 0 auto;
+}
+
+/* Spec grid — the TL;DR parts-list tables laid two-up instead of stacked.
+   Each block keeps its own h3 (so the TOC entries survive). Collapses to a
+   single column on narrow screens. */
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 2.5rem;
+    align-items: start;
+    margin: 1.5rem 0 2rem;
+}
+.spec-grid .spec-block > :first-child {
+    margin-top: 0.75rem;
+}
+.spec-grid table {
+    width: 100%;
+    margin: 0.5rem 0 0;
+}
+@media (max-width: 620px) {
+    .spec-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Content tables — the theme ships no table styling (only normalize's
+   border-collapse), so markdown tables render as cramped borderless text.
+   Treat them as a tidy spec sheet: sans-serif meta register (matching the
+   asides), ruled rows, an uppercase eyebrow header. Width is auto so short
+   parts-lists stay compact instead of stretching across the column. */
+.post table {
+    margin: 1.75rem 0 2rem;
+    border-collapse: collapse;
+    font-family: "Inter", sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.4;
+    color: #333;
+}
+.post table thead th {
+    text-align: left;
+    padding: 0.35rem 1.5rem 0.5rem 0;
+    border-bottom: 2px solid #3D2B1F;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+.post table td {
+    padding: 0.5rem 1.5rem 0.5rem 0;
+    border-bottom: 1px solid rgba(61, 43, 31, 0.14);
+    vertical-align: middle;
+}
+.post table tbody tr:last-child td {
+    border-bottom: none;
+}
+.post table td:last-child,
+.post table th:last-child {
+    padding-right: 0;
+}
+.post table code {
+    font-size: 0.85em;
+}
+
+/* Intro split — two columns under the opening heading: copy at left, the
+   animated tanager plate at right. Collapses to a single column (copy first,
+   bird below) on narrow screens. */
+.intro-split {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 1.5rem 0 2rem;
+}
+.intro-split .intro-copy {
+    flex: 1 1 58%;
+    min-width: 0;
+}
+.intro-split .intro-copy p:first-child {
+    margin-top: 0;
+}
+.intro-split .intro-figure {
+    flex: 0 1 40%;
+    margin: 0;
+}
+.intro-split .intro-figure img {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+}
+@media (max-width: 620px) {
+    .intro-split {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .intro-split .intro-figure img {
+        max-width: 260px;
+    }
+}
+
+/* Color swatch chip — set the fill inline via style="background:#...".
+   A ring + inner highlight keep pale swatches (paper) visible on white. */
+.post .swatch {
+    display: inline-block;
+    width: 0.95rem;
+    height: 0.95rem;
+    margin-right: 0.5rem;
+    border-radius: 3px;
+    vertical-align: -0.15em;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
